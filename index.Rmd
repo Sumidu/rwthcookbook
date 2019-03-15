@@ -1,5 +1,5 @@
 ---
-title: "RWTH Cookbook"
+title: "RWTH Cookbook for R"
 author: "André Calero Valdez"
 date: "Last updated: `r format(Sys.Date())`"
 output:
