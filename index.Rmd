@@ -77,7 +77,6 @@ df %>%
     y = "Frequency (absolute)",
     caption = "Histogram using 30 bins. Source: hcictools"
   ) +
-  rwththeme() +
   NULL
 ```
 
