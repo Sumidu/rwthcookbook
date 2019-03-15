@@ -7,14 +7,13 @@ output:
     toc: true
     toc_depth: 4
     toc_float: 
-      collapsed: false
+      collapsed: true
       smooth_scroll: true
     number_sections: true
-    #theme: readable
-    fig_caption: true
+    theme: cosmo
     dev: png
     df_print: paged
-    code_folding: show
+    #code_folding: show
 ---
 
 ```{r setup, include=FALSE}
@@ -30,3 +29,14 @@ The typical type of data the we are confronted with comes in the so called *wide
 We use the `tidyverse` package for data wrangling. If data wrangling is needed for visualization it should be included in the example. 
 
 1. Include data wrangling, if needed for visualization.
+
+# Required Libraries
+```{r libraries}
+library(tidyverse)
+```
+
+
+# Data Familiarization
+
+# Basic Recipies
+## How to create a good looking histogram
