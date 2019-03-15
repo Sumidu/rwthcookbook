@@ -27,7 +27,7 @@ if(!require(rwththeme)){
 ```
 
 # What is this cookbook?
-This cookbook serves as a place to exchange frequently needed plot recipies using standardized data sets. In order to understand how the recipies work it is helpful to first make yourself familiar with the datasets used. Besides that we rely on a set of conventions to keep the code readable in this document.
+This cookbook serves as a place to exchange frequently needed plot recipes using standardized data sets. In order to understand how the recipes work it is helpful to first make yourself familiar with the data sets used. Besides that we rely on a set of conventions to keep the code readable in this document.
 This document is a work in progress document and might contain mistakes.
 
 ## Code conventions
@@ -56,9 +56,9 @@ df <- read_rds("data.rds")
 # Basic Recipies
 ## Data Overview
 ### Creating a basic plot. Example: Histogram
-Each plot has labels. The `title` should containg a short sentence summarizing what the plot is showing. The `subtitle` should contain what is actually shown (e.g., plottype, variables, etc.). The `caption` should give additional information that might make the plot ambigious to read. Additionally sources can be added here.
+Each plot has labels. The `title` should contain a short sentence summarizing what the plot is showing. The `subtitle` should contain what is actually shown (e.g., plot type, variables, etc.). The `caption` should give additional information that might make the plot ambiguous to read. Additionally sources can be added here.
 
-The bins of a histogram become more readable, when the border color is set to `"white"` as in this exapmle, as it delineates the plot from background.
+The bins of a histogram become more readable, when the border color is set to `"white"` as in this example, as it delineates the plot from background.
 ```{r histogram-1}
 df %>%
   select(age) %>%
@@ -72,6 +72,47 @@ df %>%
     y = "Frequency (absolute)",
     caption = "Histogram using 30 bins. Source: hcictools"
   ) +
+  rwththeme() +
   NULL
+```
+
+
+
+
+
+# Tipps
+
+## Assigning a plot to a variable and showing it still
+Simply put the assignment in parenthesis. This will also plot the output
+```{r tip1}
+
+(p <- 
+   df %>% 
+    ggplot() +
+    aes(x = age) + 
+    geom_histogram(bins=30)
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r dummy, eval=FALSE, include=FALSE}
+# here we can test things
+
+finalise_plot(plot_name = p,
+source = "Source: ONS",
+save_filepath = "filename_that_my_plot_should_be_saved_to-nc.png",
+logo_image_path = "logo.png")
 ```
 
