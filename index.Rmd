@@ -14,10 +14,16 @@ output:
     dev: png
     df_print: paged
     #code_folding: show
+    fig.asp : 0.681
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+# requires the rwththeme package
+if(!require(rwththeme)){
+  library(devtools)
+  install_github("sumidu/rwththeme")
+}
 ```
 
 # What is this cookbook?
@@ -29,14 +35,43 @@ The typical type of data the we are confronted with comes in the so called *wide
 We use the `tidyverse` package for data wrangling. If data wrangling is needed for visualization it should be included in the example. 
 
 1. Include data wrangling, if needed for visualization.
+2. Select the variables needed in the ggplot call.
+3. Format the code using the format code-tool in RStudio. Then readjust the parameter assignments in functions to one additional tab.
+4. End all ggplot pipes in a `+ NULL` line. This allows commenting out single lines (including the last line) without breaking the code.
 
-# Required Libraries
-```{r libraries}
+
+## Required Libraries
+This cookbook uses several packages. The `rwththeme` package requires an install from github. You can go to https://github.com/Sumidu/rwththeme to install it.
+
+```{r libraries, message=FALSE, warning=FALSE}
 library(tidyverse)
+library(rwththeme)
+
+df <- read_rds("data.rds")
 ```
 
 
-# Data Familiarization
+## Data Familiarization
 
 # Basic Recipies
-## How to create a good looking histogram
+## Data Overview
+### Creating a basic plot. Example: Histogram
+Each plot has labels. The `title` should containg a short sentence summarizing what the plot is showing. The `subtitle` should contain what is actually shown (e.g., plottype, variables, etc.). The `caption` should give additional information that might make the plot ambigious to read. Additionally sources can be added here.
+
+The bins of a histogram become more readable, when the border color is set to `"white"` as in this exapmle, as it delineates the plot from background.
+```{r histogram-1}
+df %>%
+  select(age) %>%
+  ggplot() +
+  aes(age) +
+  geom_histogram(bins = 30, color = "white") +
+  labs(
+    title = "The sample is of a very young age",
+    subtitle = "Histogram of the age variable",
+    x = "Age",
+    y = "Frequency (absolute)",
+    caption = "Histogram using 30 bins. Source: hcictools"
+  ) +
+  NULL
+```
+
