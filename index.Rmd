@@ -1,0 +1,32 @@
+---
+title: "RWTH Cookbook"
+author: "André Calero Valdez"
+date: "15 3 2019"
+output:
+ html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: 
+      collapsed: false
+      smooth_scroll: true
+    number_sections: true
+    #theme: readable
+    fig_caption: true
+    dev: png
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# What is this cookbook?
+This cookbook serves as a place to exchange frequently needed plot recipies using standardized data sets. In order to understand how the recipies work it is helpful to first make yourself familiar with the datasets used. Besides that we rely on a set of conventions to keep the code readable in this document.
+This document is a work in progress document and might contain mistakes.
+
+## Code conventions
+The typical type of data the we are confronted with comes in the so called *wide format*. This means for each measurement we have a column. Each row is one observation (or in our case one participant).
+We use the `tidyverse` package for data wrangling. If data wrangling is needed for visualization it should be included in the example. 
+
+1. Include data wrangling, if needed for visualization.
