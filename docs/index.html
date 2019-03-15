@@ -251,14 +251,19 @@ df &lt;- read_rds(&quot;data.rds&quot;)</code></pre>
 </div>
 <div id="data-familiarization" class="section level2">
 <h2><span class="header-section-number">1.3</span> Data Familiarization</h2>
+<p>TODO: Provide an introduction to the dataset that is being used here.</p>
 </div>
 </div>
-<div id="basic-recipies" class="section level1">
-<h1><span class="header-section-number">2</span> Basic Recipies</h1>
+<div id="statistical-recipes" class="section level1">
+<h1><span class="header-section-number">2</span> Statistical Recipes</h1>
+<p>TODO: Here some typical statistical tricks are shown.</p>
+</div>
+<div id="basic-plotting-recipes" class="section level1">
+<h1><span class="header-section-number">3</span> Basic Plotting Recipes</h1>
 <div id="data-overview" class="section level2">
-<h2><span class="header-section-number">2.1</span> Data Overview</h2>
+<h2><span class="header-section-number">3.1</span> Data Overview</h2>
 <div id="creating-a-basic-plot.-example-histogram" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Creating a basic plot. Example: Histogram</h3>
+<h3><span class="header-section-number">3.1.1</span> Creating a basic plot. Example: Histogram</h3>
 <p>Each plot has labels. The <code>title</code> should contain a short sentence summarizing what the plot is showing. The <code>subtitle</code> should contain what is actually shown (e.g., plot type, variables, etc.). The <code>caption</code> should give additional information that might make the plot ambiguous to read. Additionally sources can be added here.</p>
 <p>The bins of a histogram become more readable, when the border color is set to <code>&quot;white&quot;</code> as in this example, as it delineates the plot from background.</p>
 <pre class="r"><code>df %&gt;%
@@ -280,9 +285,9 @@ df &lt;- read_rds(&quot;data.rds&quot;)</code></pre>
 </div>
 </div>
 <div id="tipps" class="section level1">
-<h1><span class="header-section-number">3</span> Tipps</h1>
+<h1><span class="header-section-number">4</span> Tipps</h1>
 <div id="assigning-a-plot-to-a-variable-and-showing-it-still" class="section level2">
-<h2><span class="header-section-number">3.1</span> Assigning a plot to a variable and showing it still</h2>
+<h2><span class="header-section-number">4.1</span> Assigning a plot to a variable and showing it still</h2>
 <p>Simply put the assignment in parenthesis. This will also plot the output</p>
 <pre class="r"><code>(p &lt;- 
    df %&gt;% 

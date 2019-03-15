@@ -52,8 +52,13 @@ df <- read_rds("data.rds")
 
 
 ## Data Familiarization
+TODO: Provide an introduction to the dataset that is being used here.
 
-# Basic Recipies
+# Statistical Recipes
+TODO: Here some typical statistical tricks are shown.
+
+
+# Basic Plotting Recipes
 ## Data Overview
 ### Creating a basic plot. Example: Histogram
 Each plot has labels. The `title` should contain a short sentence summarizing what the plot is showing. The `subtitle` should contain what is actually shown (e.g., plot type, variables, etc.). The `caption` should give additional information that might make the plot ambiguous to read. Additionally sources can be added here.
