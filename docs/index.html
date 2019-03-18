@@ -223,7 +223,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">RWTH Cookbook for R</h1>
 <h4 class="author"><em>André Calero Valdez</em></h4>
-<h4 class="date"><em>Last updated: 2019-03-15</em></h4>
+<h4 class="date"><em>Last updated: 2019-03-18</em></h4>
 
 </div>
 
@@ -267,7 +267,7 @@ df &lt;- read_rds(&quot;data.rds&quot;)</code></pre>
 <p>Each plot has labels. The <code>title</code> should contain a short sentence summarizing what the plot is showing. The <code>subtitle</code> should contain what is actually shown (e.g., plot type, variables, etc.). The <code>caption</code> should give additional information that might make the plot ambiguous to read. Additionally sources can be added here.</p>
 <p>The bins of a histogram become more readable, when the border color is set to <code>&quot;white&quot;</code> as in this example, as it delineates the plot from background.</p>
 <pre class="r"><code>df %&gt;%
-  select(age) %&gt;%
+  dplyr::select(age) %&gt;%
   ggplot() +
   aes(age) +
   geom_histogram(bins = 30, color = &quot;white&quot;) +
@@ -283,10 +283,16 @@ df &lt;- read_rds(&quot;data.rds&quot;)</code></pre>
 </div>
 </div>
 </div>
+<div id="advanced-plotting-recipes" class="section level1">
+<h1><span class="header-section-number">4</span> Advanced Plotting recipes</h1>
+<div id="radarplot" class="section level2">
+<h2><span class="header-section-number">4.1</span> Radarplot</h2>
+</div>
+</div>
 <div id="tipps" class="section level1">
-<h1><span class="header-section-number">4</span> Tipps</h1>
+<h1><span class="header-section-number">5</span> Tipps</h1>
 <div id="assigning-a-plot-to-a-variable-and-showing-it-still" class="section level2">
-<h2><span class="header-section-number">4.1</span> Assigning a plot to a variable and showing it still</h2>
+<h2><span class="header-section-number">5.1</span> Assigning a plot to a variable and showing it still</h2>
 <p>Simply put the assignment in parenthesis. This will also plot the output</p>
 <pre class="r"><code>(p &lt;- 
    df %&gt;% 

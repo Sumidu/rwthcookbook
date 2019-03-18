@@ -66,7 +66,7 @@ Each plot has labels. The `title` should contain a short sentence summarizing wh
 The bins of a histogram become more readable, when the border color is set to `"white"` as in this example, as it delineates the plot from background.
 ```{r histogram-1}
 df %>%
-  select(age) %>%
+  dplyr::select(age) %>%
   ggplot() +
   aes(age) +
   geom_histogram(bins = 30, color = "white") +
@@ -82,7 +82,9 @@ df %>%
 
 
 
+# Advanced Plotting recipes
 
+## Radarplot
 
 # Tipps
 
