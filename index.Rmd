@@ -51,11 +51,16 @@ df <- read_rds("data.rds")
 ```
 
 
-## Data Familiarization
-TODO: Provide an introduction to the dataset that is being used here.
+```{r child="010_data_familiarization.Rmd"}
+```
 
-# Statistical Recipes
-TODO: Here some typical statistical tricks are shown.
+```{r child = 'data_manipulation.Rmd'}
+```
+
+```{r child="020_basic_statistics.Rmd"}
+```
+
+
 
 
 # Basic Plotting Recipes
@@ -97,7 +102,7 @@ df %>%
   scale_y_continuous( breaks = 1:6, limits = c(1,6)) +
   coord_flip() +
   labs(y = "Mean of the variable", x = "Variable", title = "Acceptance for robo_bed is highest", 
-       subtitle = "Means of different scale items", caption = "Errorbar denots standard error")+
+       subtitle = "Means of different scale items", caption = "Errorbar denotes standard error")+
   NULL
 
 ```
@@ -119,7 +124,7 @@ df %>%
   scale_y_continuous( breaks = 1:6, limits = c(1,6)) +
   coord_flip() +
   labs(y = "Mean of the variable", x = "Variable", title = "Acceptance for robo_bed is highest", 
-       subtitle = "Means of different scale items", caption = "Errorbar denots standard error")+
+       subtitle = "Means of different scale items", caption = "Errorbar denotes 95% confidence interval")+
   NULL
 
 ```

@@ -1,0 +1,2 @@
+# Statistical Recipes
+TODO: Here some typical statistical tricks are shown.
