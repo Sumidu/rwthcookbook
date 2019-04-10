@@ -80,7 +80,49 @@ df %>%
   NULL
 ```
 
+### Creating a chart to show basic summary statistics (SE Version)
+Sometimes to explore a whole set of variables it can be helpful to visualize the summary statistics.
 
+```{r describe_plot}
+
+df %>% 
+  select(starts_with("robo")) %>%    # pick all variables that start with robo
+  psych::describe() %>%              # get summary statistics
+  as.data.frame() %>%                # convert the result to a data.frame
+  rownames_to_column() %>%           # convert the non-tidy rowname to a column
+  ggplot() +
+  aes(y = mean, x = rowname, ymin = mean - se, ymax = mean + se) +
+  geom_point() +
+  geom_errorbar(width = 0.5) +
+  scale_y_continuous( breaks = 1:6, limits = c(1,6)) +
+  coord_flip() +
+  labs(y = "Mean of the variable", x = "Variable", title = "Acceptance for robo_bed is highest", 
+       subtitle = "Means of different scale items", caption = "Errorbar denots standard error")+
+  NULL
+
+```
+
+
+### Creating a chart to show basic summary statistics (CI Version)
+
+```{r describe_plot_ci}
+
+df %>% 
+  select(starts_with("robo")) %>%    # pick all variables that start with robo
+  psych::describe() %>%              # get summary statistics
+  as.data.frame() %>%                # convert the result to a data.frame
+  rownames_to_column() %>%           # convert the non-tidy rowname to a column
+  ggplot() +
+  aes(y = mean, x = rowname, ymin = mean - se * 1.97, ymax = mean + se * 1.97) +
+  geom_point() +
+  geom_errorbar(width = 0.5) +
+  scale_y_continuous( breaks = 1:6, limits = c(1,6)) +
+  coord_flip() +
+  labs(y = "Mean of the variable", x = "Variable", title = "Acceptance for robo_bed is highest", 
+       subtitle = "Means of different scale items", caption = "Errorbar denots standard error")+
+  NULL
+
+```
 
 # Advanced Plotting recipes
 
